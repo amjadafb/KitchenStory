@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="cart-wrap">
+      <table *ngIf="current_cart" style="width:100%">
+        <tr>
+          <th>Product Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+        <tr *ngFor="let cart of cart_list">
+          <td>{{cart.product_name}}</td>
+          <td>{{cart.quantity}}</td>
+          <td>{{cart.total_product_price + ' SAR'}}</td>
+        </tr>
+        <tr >
+          <td td  colspan="3" style="text-align: center; border: none;">
+              <div class="total-price">
+                    Total:  {{total_price + ' SAR'}}
+              </div>
+            </td>
+        </tr>
+        <tr *ngIf="total_price > 0">
+          <td  colspan="3" style="border: none;">
+            <button (click)="goPayment()" class="btn">Confirm</button>
+          
+            <button (click)="clear_cart()" class="btn">Clear</button>
+          </td>
+        </tr>
+      </table>
+      <div *ngIf="payment" style="width:100%; border: black 1px solid; border-radius: 5px;">
+            <div class="payment-item-wrap">
+              <input class="payment-item" type="radio" value="Visa" > Visa<br/>
+            </div>
+            <div class="payment-item-wrap">
+              <input class="payment-item" type="radio"  value="Visa"> ApplePay
+            </div>
+            <div class="payment-item-wrap">
+              <input class="payment-item" type="radio"  value="Visa"> PayPal
+            </div>
+            <div class="payment-item-wrap">
+              <input class="payment-item" type="radio" value="Visa"> Cash On Delivery
+            </div>
+            <div class="payment-item-wrap">
+              <button (click)="goRecipt()" class="btn2">Pay Now</button>
+            </div>
+      </div>
+      <div *ngIf="receipt" style="width:100%; height: 100%">
+
+              <div class="receipt-wrap">
+                
+                  <div class="actual-receipt">
+                    <div class="receipt_title">
+                      Receipt
+                    </div><br/><br/>
+                        <div *ngFor="let cart of cart_list">
+                          <div class="receipt-items">
+                            <div class="receipt-item">{{cart.product_name}}:</div>
+                            <div class="receipt-item">{{cart.total_product_price + ' SAR'}}</div><br/>
+                          </div>
+                        </div><br/><br/>
+                        <div>
+                         Total: {{total_price + ' SAR'}}
+                        </div>
+
+                  </div>
+              </div>
+      </div>
+    </div>
+</div>
+
+

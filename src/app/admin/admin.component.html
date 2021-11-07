@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="centre">
+    <div class="wrap-buttons">
+      <button (click)="manage()" class="btn2">Dashboard</button>
+      <button (click)="create()" class="btn2">New Item</button>
+      <button (click)="settings()" class="btn2">Reset Password</button>
+    </div>
+  </div>
+  <div *ngIf="is_manage" class="manage">
+  <table style="width:100%">
+      <tr>
+        <th>Product Image</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th></th>
+      </tr>
+      <tr *ngFor = "let product of products; index as i;">
+          <td>
+            <img style="width: 30px; height: 30px" src="{{product.img}}" alt="img">
+          </td>
+          <td>{{product.product_name}}</td>
+          <td>{{product.price}}</td>
+          <td>
+            <button (click)="remove(i)" class="btn-remove">Delete</button>
+          </td>
+      </tr>
+      <tr>
+      </tr>
+  </table>
+  </div>
+  <div *ngIf = "is_create" class="manage">
+        <div class="create-wrap">
+          <div class="create-container">
+            <div class="create-item-wrap">
+              <div *ngIf = 'success' class="success">Item added successfully</div>
+            </div>
+              <div class="create-item-wrap">
+                <div class="field-title">Product name : </div>
+                <input class="create-item" type="text" placeholder="Product Name" [(ngModel)] = "product_name">
+              </div>
+              <div class="create-item-wrap">
+                <div class="field-title">Quantity : </div>
+                <input class="create-item" type="number" placeholder="Quantity" [(ngModel)] = "quantity">
+              </div>
+              <div class="create-item-wrap">
+                <div class="field-title">Image Url : </div>
+                <input class="create-item" type="text" placeholder="Image Url" [(ngModel)] = "img">
+              </div>
+            <div class="create-item-wrap">
+              <div class="field-title">Description : </div>
+              <textarea class="create-item" type="text" placeholder="Description" [(ngModel)] = "description"></textarea>
+            </div>
+            <div class="create-item-wrap">
+              <div class="field-title">Price : </div>
+              <input class="create-item" type="number" placeholder="Price" [(ngModel)] = "price">
+            </div>
+              <div class="create-item-wrap">
+                <button (click)="create_item()" class="payment-item btn">Add new item</button>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div *ngIf = "is_settings" class="manage">
+    <div class="create-wrap">
+      <div class="create-container">
+        <div class="create-item-wrap">
+          <div *ngIf = 'password_show_check' [class]="password_check_style">{{change_message}}</div>
+        </div>
+        <div class="create-item-wrap">
+          <div class="field-title">Old password: </div>
+          <input class="create-item" type="text" placeholder="Old password" [(ngModel)] = "old_password">
+        </div>
+        <div class="create-item-wrap">
+          <div class="field-title">New password: </div>
+          <input class="create-item" type="text" placeholder="New password" [(ngModel)] = "new_password">
+        </div>
+        
+        <div class="create-item-wrap">
+          <button (click)="change_password()" class="payment-item btn">Reset Password</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

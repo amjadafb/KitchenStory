@@ -1,0 +1,142 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.wrap-buttons {
+  width: 50%;
+  height: 10%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 20px;
+  margin-left: 100px;
+}
+
+.btn {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  margin-right: 10px;
+
+}
+
+.btn2 {
+  padding: 10px;
+  background-color: white;
+  color: black;
+  font-size: 15px;
+  cursor: pointer;
+  margin-right: 10px;
+  text-decoration: underline;
+  border: none;
+}
+
+.centre {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 10%;
+}
+
+table {
+  padding: 25px;
+}
+
+th, td {
+  border: 1px solid black;
+  color: black;
+  margin-top: 10px;
+  text-align: center;
+}
+th, td {
+  padding: 10px;
+}
+
+.manage {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  overflow: scroll;
+  margin-top: 10px;
+}
+
+.btn-remove {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  /*optional*/
+  font-family: arial, sans-serif;
+  /*input has OS specific font-family*/
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.create-wrap {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-item-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.create-item {
+  width: 50%;
+  padding: 10px;
+}
+
+.create-container {
+  width: 100%;
+  height: 100%;
+}
+
+.field-title {
+  display: flex;
+  justify-content: flex-end;
+  width: 30%;
+  margin-right: 10px;
+}
+
+.success {
+  background-color: green;
+  color: white;
+  font-size: 15px;
+  height: 40px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.alert_success {
+  background-color: green;
+  color: white;
+  font-size: 15px;
+  height: 40px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.alert_fail {
+  background-color: red;
+  color:white;
+  font-size: 15px;
+  height: 40px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}

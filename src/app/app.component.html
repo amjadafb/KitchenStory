@@ -1,0 +1,45 @@
+<div class="app">
+    <div class="header">
+        <div class="header-text">
+          <div>
+            Kitchen Story
+          </div>
+        </div>
+      <div class="header-home">
+        <div (click)="goHome()" style="margin-left: 5px; cursor: pointer">Home</div>
+      </div>
+      <div class="header-cart">
+        <div (click)="goCart()" style="margin-left: 10px; cursor: pointer"> Cart</div>
+      </div>
+      <div *ngIf="manage_btn_show" class="header-home">
+        <div (click)="goManage()" style="margin-left: 20px; cursor: pointer">Dashboard</div>
+      </div>
+      <div class="header-home">
+        <div (click)="goLogin()" style="margin-left: 20px; cursor: pointer">{{login_status}}</div>
+      </div>
+    </div>
+    <div *ngIf="isHome" class="body">
+      <div class="body-search">
+        <div class="search-icon">
+        </div>
+        <div class="search-input">
+          <div>Search: </div><input placeholder="search" type="text" [(ngModel)]="search_value"  (input)="search()">
+        </div>
+      </div>
+      <div class="body-content">
+          <div class="body-item" *ngFor="let product of products">
+            <div class="body-item-content">
+              <img src="{{product.img}}" alt="{{product.product_name}}">
+            </div>
+            <div class="body-item-content-details"><br/>
+              <div>{{product.product_name}}</div>
+              <div (click)="goDetails(product)" class="body-details">More...</div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div *ngIf="isOthers" class="body-others">
+      <router-outlet></router-outlet>
+    </div>
+</div>
+

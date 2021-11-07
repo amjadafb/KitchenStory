@@ -1,0 +1,102 @@
+th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  color: black;
+}
+th, td {
+  padding: 15px;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-wrap {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.total-price {
+  color: black;
+  font-size: calc(1vw + 2px);
+  font-weight: bold;
+  padding-left: 25px;
+}
+
+.btn {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: gainsboro;
+  border:none;
+  color: black;
+  float:left;
+  margin-left: 14%;
+}
+.btn2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: gainsboro;
+  border:none;
+  color: black;
+}
+.payment-item-wrap {
+  width: 100%;
+  display: flex;
+  justify-content:left;
+  float: left;
+}
+
+.payment-item {
+    width: 10%;
+}
+
+
+.receipt-wrap{
+  
+  width: 100%;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.receipt_title{
+  padding-top: 20px;
+  font-size: xx-large;
+}
+.actual-receipt {
+  margin-top: 50px;
+  border:solid 2px gainsboro;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 10px;
+}
+
+.receipt-items {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.receipt-item {
+  width: 20%;
+}

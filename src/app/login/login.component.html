@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="login-wrap">
+      <div *ngIf="error" class="login-item-wrap">
+        <div class="error">The username or password incorrect</div>
+      </div>
+      <div class="login-item-wrap">
+        <div class="login-item">
+          <input type="text" placeholder="Username" [(ngModel)] = "username">
+        </div>
+      </div>
+      <div class="login-item-wrap">
+        <div class="login-item">
+          <input type="password" placeholder="Password" [(ngModel)] = "password">
+        </div>
+      </div>
+      <div (click)="login()" style="cursor: pointer" class="login-item-wrap">
+        <div class="login-item">
+          <div>Login</div>
+        </div>
+      </div>
+      
+    </div>
+</div>
